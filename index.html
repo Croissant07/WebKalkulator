@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="fakultet.js">
+    <link rel="stylesheet" href="fizzbuzz.js">
 </head>
 <body>
     <div id="fakultet">
@@ -39,5 +40,35 @@
         // vi trykker på en knapp (button) i elementet med id 'fakultet'
         document.querySelector('#fakultet button')
             .addEventListener('click', e => regnUt(e))</script>
+
+<div id="FizzBuzz">
+    <form>
+        <input name="tall" placeholder="Tall" type="number">
+        <button>Regn ut FizzBuzz</button>
+    </form>
+    <p>
+        Resultatet er: <span class="resultat"></span>
+    </p>
+</div>
+    <script type="module">import {fizzbuzz} from './fizzbuzz.js'
+    
+    function regnUtFB(evt) {
+            // For å forhindre at nettleseren sender skjemaet:
+            evt.preventDefault()
+
+
+            const input = document.querySelector('#fizzbuzz input')
+            const output = document.querySelector('#fizbuzz .resultat')
+        
+            // parseInt konverterer en streng til et heltall
+            const tall = parseInt(input.value)
+        
+            output.textContent = fizbuzz(tall)
+        }
+        
+
+        document.querySelector('#fizbuzz button')
+            .addEventListener('click', e => regnUtFB(e))</script>
+
 </body>
 </html>
