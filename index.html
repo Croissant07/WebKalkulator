@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="fakultet.js">
-    <link rel="stylesheet" href="fizzbuzz.js">
+    <title>Web Kalkulator</title>
 </head>
 <body>
     <div id="fakultet">
@@ -17,58 +15,71 @@
             Resultatet er: <span class="resultat"></span>
         </p>
     </div>
-    <script type="module">import {fakultet} from './fakultet.js'
+    
+    <script type="module">
+        import { fakultet } from './fakultet.js';
 
         function regnUt(evt) {
-            // For å forhindre at nettleseren sender skjemaet:
-            evt.preventDefault()
-        
-            // Vi bruker querySelector for å finne elementene vi trenger:
-            // "#fakultet input" betyr "input-felt i elementet med id 'fakultet'
-            // "#fakultet .resultat" betyr "element med class 'resultat' i
-            //    elementet med id 'fakultet'
-            const input = document.querySelector('#fakultet input')
-            const output = document.querySelector('#fakultet .resultat')
-        
-            // parseInt konverterer en streng til et heltall
-            const tall = parseInt(input.value)
-        
-            output.textContent = fakultet(tall)
+            evt.preventDefault();
+            const input = document.querySelector('#fakultet input');
+            const output = document.querySelector('#fakultet .resultat');
+            const tall = parseInt(input.value);
+            output.textContent = fakultet(tall);
         }
-        
-        // Vi legger til en "event listener" som kjører regnUt-funksjonen når
-        // vi trykker på en knapp (button) i elementet med id 'fakultet'
+
         document.querySelector('#fakultet button')
-            .addEventListener('click', e => regnUt(e))</script>
+            .addEventListener('click', e => regnUt(e));
+    </script>
 
-<div id="FizzBuzz">
-    <form>
-        <input name="tall" placeholder="Tall" type="number">
-        <button>Regn ut FizzBuzz</button>
-    </form>
-    <p>
-        Resultatet er: <span class="resultat"></span>
-    </p>
-</div>
-    <script type="module">import {fizzbuzz} from './fizzbuzz.js'
-    
-    function regnUtFB(evt) {
-            // For å forhindre at nettleseren sender skjemaet:
-            evt.preventDefault()
+    <div id="FizzBuzz">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut FizzBuzz</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
 
+    <script type="module">
+        import { fizzbuzz } from './fizzbuzz.js';
 
-            const input = document.querySelector('#fizzbuzz input')
-            const output = document.querySelector('#fizbuzz .resultat')
-        
-            // parseInt konverterer en streng til et heltall
-            const tall = parseInt(input.value)
-        
-            output.textContent = fizbuzz(tall)
+        function regnUtFB(evt) {
+            evt.preventDefault();
+            const input = document.querySelector('#FizzBuzz input');
+            const output = document.querySelector('#FizzBuzz .resultat');
+            const tall = parseInt(input.value);
+            output.textContent = fizzbuzz(tall);
         }
-        
 
-        document.querySelector('#fizbuzz button')
-            .addEventListener('click', e => regnUtFB(e))</script>
+        document.querySelector('#FizzBuzz button')
+            .addEventListener('click', e => regnUtFB(e));
+    </script>
+
+    <div id="fibonacci">
+        <form>
+            <input name="tall" placeholder="Tall" type="number">
+            <button>Regn ut Fibonacci</button>
+        </form>
+        <p>
+            Resultatet er: <span class="resultat"></span>
+        </p>
+    </div>
+
+    <script type="module">
+        import { fibonacci } from './fibonacci.js';
+
+        function regnUtFibonacci(evt) {
+            evt.preventDefault();
+            const input = document.querySelector('#fibonacci input');
+            const output = document.querySelector('#fibonacci .resultat');
+            const tall = parseInt(input.value);
+            output.textContent = fibonacci(tall);
+        }
+
+        document.querySelector('#fibonacci button')
+            .addEventListener('click', e => regnUtFibonacci(e));
+    </script>
 
 </body>
 </html>
