@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+#FizzBuzz{
+ border: solid 20px white;
+ padding: 10px;
+ margin: 10px;
+
+ margin-right: 100px;
+ margin-left: 100px;
+ border-radius: 25px;
+}
+
+#fakultet{
+    border: solid 20px white;
+    padding: 10px;
+    margin: 10px;
+
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 25px;
+}
+
+#fibonacci{
+    border: solid 20px white;
+    padding: 10px;
+    margin: 10px;
+
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 25px;
+}
